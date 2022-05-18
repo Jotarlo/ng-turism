@@ -10,7 +10,7 @@ import { CreateUserComponent } from './user/create-user/create-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { RemoveUserComponent } from './user/remove-user/remove-user.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,11 +21,13 @@ import { RemoveUserComponent } from './user/remove-user/remove-user.component';
     CreateUserComponent,
     EditUserComponent,
     UserListComponent,
-    RemoveUserComponent
+    RemoveUserComponent,
   ],
   imports: [
     CommonModule,
-    SecurityRoutingModule
-  ]
+    SecurityRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-export class SecurityModule { }
+export class SecurityModule {}

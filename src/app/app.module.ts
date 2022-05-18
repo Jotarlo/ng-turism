@@ -8,7 +8,8 @@ import { MenuComponent } from './public/template/menu/menu.component';
 import { FooterComponent } from './public/template/footer/footer.component';
 import { HomeComponent } from './public/home/home.component';
 import { Error404Component } from './public/errors/error404/error404.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +17,10 @@ import { Error404Component } from './public/errors/error404/error404.component';
     MenuComponent,
     FooterComponent,
     HomeComponent,
-    Error404Component
+    Error404Component,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

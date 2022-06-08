@@ -14,6 +14,8 @@ import { CreateCityComponent } from './city/create-city/create-city.component';
 import { EditCityComponent } from './city/edit-city/edit-city.component';
 import { RemoveCityComponent } from './city/remove-city/remove-city.component';
 import { CityListComponent } from './city/city-list/city-list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,12 @@ import { CityListComponent } from './city/city-list/city-list.component';
     RemoveCityComponent,
     CityListComponent,
   ],
-  imports: [CommonModule, ParametersRoutingModule],
+  imports: [
+    CommonModule,
+    ParametersRoutingModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class ParametersModule {}

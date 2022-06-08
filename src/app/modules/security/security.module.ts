@@ -11,6 +11,7 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { RemoveUserComponent } from './user/remove-user/remove-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignoutComponent } from './signout/signout.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditUserComponent,
     UserListComponent,
     RemoveUserComponent,
+    SignoutComponent,
   ],
   imports: [
     CommonModule,

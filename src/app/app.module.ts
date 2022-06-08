@@ -10,6 +10,7 @@ import { HomeComponent } from './public/home/home.component';
 import { Error404Component } from './public/errors/error404/error404.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,

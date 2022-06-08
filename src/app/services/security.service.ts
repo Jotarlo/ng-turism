@@ -2,13 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GeneralData } from '../config/general-data';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SecurityService {
   url = GeneralData.url_security;
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private lsService: LocalStorageService
+  ) {}
 
   ResetPassword(username: string, email: string): Observable<object> {
     let url_reset = `${this.url}reset-password`;
@@ -37,5 +41,14 @@ export class SecurityService {
       userId: userId,
       code: code,
     });
+  }
+
+  IsThereAnActiveSession() {
+    let tk = this.lsService.GetToken();
+    return tk != '';
+  }
+
+  Signout() {
+    this.lsService.RemoveLocalStorageInfo();
   }
 }

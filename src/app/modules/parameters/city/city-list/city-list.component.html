@@ -1,1 +1,43 @@
-<p>city-list works!</p>
+<a class="waves-effect waves-light btn" routerLink="/parameters/city-creation"
+  ><i class="material-icons right">add</i>Agregar</a
+>
+<br />
+<br />
+<table class="table table-responsive">
+  <thead>
+    <th>Nombre</th>
+    <th>Departamento</th>
+    <th>Edición</th>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let item of recordList
+          | paginate: { itemsPerPage: itemsPerPage, currentPage: p }
+      "
+    >
+      <td>
+        {{ item.name }}
+      </td>
+      <td>
+        {{ item.region?.name }}
+      </td>
+      <td>
+        <a
+          class="waves-effect blue waves-light btn"
+          routerLink="/parameters/city-edition/{{ item.id }}"
+          ><i class="material-icons right">edit</i>Editar</a
+        >
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <pagination-controls
+      class="my-pagination"
+      (pageChange)="p = $event"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+    ></pagination-controls>
+  </tfoot>
+</table>
+<br />

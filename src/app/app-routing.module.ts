@@ -21,6 +21,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'parameters',
+    loadChildren: () =>
+      import('./modules/parameters/parameters.module').then(
+        (m) => m.ParametersModule
+      ),
+  },
+  {
     path: '**',
     component: Error404Component,
   },

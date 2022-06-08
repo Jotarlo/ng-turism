@@ -41,4 +41,18 @@ export class LocalStorageService {
       return '';
     }
   }
+
+  GetToken(): string {
+    let tk = localStorage.getItem('token-info');
+    if (tk) {
+      return tk;
+    } else {
+      return '';
+    }
+  }
+
+  RemoveLocalStorageInfo() {
+    localStorage.removeItem('token-info');
+    localStorage.removeItem('user-info');
+  }
 }

@@ -1,1 +1,61 @@
-<p>two-factor-authentication works!</p>
+<div class="section"></div>
+<main>
+  <div class="center">
+    <img
+      class="responsive-img"
+      style="width: 250px"
+      src="https://i.imgur.com/ax0NCsK.gif"
+    />
+    <div class="section"></div>
+
+    <h5 class="indigo-text">2FA Form</h5>
+    <div class="section"></div>
+
+    <div class="container">
+      <div
+        class="z-depth-1 grey lighten-4 row"
+        style="
+          display: inline-block;
+          padding: 32px 48px 0px 48px;
+          border: 1px solid #eee;
+        "
+      >
+        <form class="col s12" [formGroup]="formValidator" method="post">
+          <div class="row">
+            <div class="col s12"></div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                formControlName="codeField"
+                class="validate"
+                type="text"
+                name="code"
+                id="code"
+              />
+              <label for="email">Enter your code</label>
+            </div>
+          </div>
+
+          <br />
+          <div class="center">
+            <div class="row">
+              <button
+                type="submit"
+                name="btn_login"
+                (click)="ValidateCode()"
+                class="col s12 btn btn-large waves-effect indigo"
+              >
+                Validate
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="section"></div>
+  <div class="section"></div>
+</main>

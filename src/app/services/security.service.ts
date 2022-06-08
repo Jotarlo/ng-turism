@@ -17,4 +17,25 @@ export class SecurityService {
       email: email,
     });
   }
+
+  LoginUser(email: string, password: string) {
+    let url_request = `${this.url}user-authentication`;
+    return this.http.post(url_request, {
+      username: email,
+      password: password,
+    });
+  }
+
+  /**
+   * Verify code and userId
+   * @param code code to verify with 2FA
+   * @param userId userId of user that want to enter
+   */
+  ValidateCode(code: string, userId: string): Observable<any> {
+    let url_request = `${this.url}two-factor-authentication`;
+    return this.http.post<any>(url_request, {
+      userId: userId,
+      code: code,
+    });
+  }
 }
